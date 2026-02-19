@@ -8,7 +8,6 @@ const sections = [
   { id: "blood", label: "Kanın Yapısı" },
   { id: "circulation", label: "Dolaşım" },
   { id: "extra", label: "Ekstra Bilgi" },
-  { id: "references", label: "Kaynakça" },
 ];
 
 const Navigation = () => {

@@ -6,7 +6,6 @@ import BloodVesselsSection from "@/components/BloodVesselsSection";
 import BloodCompositionSection from "@/components/BloodCompositionSection";
 import CirculationSection from "@/components/CirculationSection";
 import ExtraInfoSection from "@/components/ExtraInfoSection";
-import ReferencesSection from "@/components/ReferencesSection";
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
         <BloodCompositionSection />
         <CirculationSection />
         <ExtraInfoSection />
-        <ReferencesSection />
       </main>
       {/* Footer */}
       <footer className="border-t border-border/30 py-6 text-center text-muted-foreground text-sm">
