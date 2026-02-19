@@ -2,95 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* =============================================
+   DOLAŞIM SİSTEMİ - Design System
+   Kırmızı = Oksijenli (temiz) kan
+   Mavi = Oksijensiz (kirli) kan
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Backgrounds */
+    --background: 228 35% 6%;
+    --background-card: 228 30% 9%;
+    --background-section: 228 32% 7%;
+    --foreground: 210 30% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card */
+    --card: 228 28% 10%;
+    --card-foreground: 210 30% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover */
+    --popover: 228 28% 12%;
+    --popover-foreground: 210 30% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Oksijensiz/Kirli Kan (Mavi) */
+    --primary: 220 85% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 85% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Oksijenli/Temiz Kan (Kırmızı) */
+    --secondary: 0 75% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 0 80% 65%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted */
+    --muted: 228 25% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent */
+    --accent: 228 25% 15%;
+    --accent-foreground: 210 30% 95%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Destructive */
+    --destructive: 0 80% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders */
+    --border: 228 25% 18%;
+    --input: 228 25% 15%;
+    --ring: 220 85% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom Biology Tokens */
+    --oxygenated: 0 75% 52%;       /* Kırmızı - temiz kan */
+    --deoxygenated: 220 85% 55%;   /* Mavi - kirli kan */
+    --oxygenated-glow: 0 80% 65%;
+    --deoxygenated-glow: 220 85% 70%;
+    --vessel-wall: 30 60% 40%;
+    --plasma: 45 80% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    /* Sidebar */
+    --sidebar-background: 228 35% 5%;
+    --sidebar-foreground: 210 30% 85%;
+    --sidebar-primary: 220 85% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 228 28% 12%;
+    --sidebar-accent-foreground: 210 30% 90%;
+    --sidebar-border: 228 25% 15%;
+    --sidebar-ring: 220 85% 58%;
   }
 }
 
@@ -99,7 +80,211 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.08); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.05); }
+  70% { transform: scale(1); }
+}
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 20px hsl(0 75% 52% / 0.4); }
+  50% { box-shadow: 0 0 40px hsl(0 75% 52% / 0.8), 0 0 70px hsl(0 75% 52% / 0.4); }
+}
+
+@keyframes pulse-blue {
+  0%, 100% { box-shadow: 0 0 20px hsl(220 85% 55% / 0.4); }
+  50% { box-shadow: 0 0 40px hsl(220 85% 55% / 0.8), 0 0 70px hsl(220 85% 55% / 0.4); }
+}
+
+@keyframes flow-right {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes flow-left {
+  0% { transform: translateX(100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blood-flow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s ease-in-out infinite;
+}
+
+.animate-pulse-blue {
+  animation: pulse-blue 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+
+/* Text gradients */
+.text-gradient-red {
+  background: linear-gradient(135deg, hsl(var(--oxygenated)), hsl(var(--oxygenated-glow)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, hsl(var(--deoxygenated)), hsl(var(--deoxygenated-glow)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-mixed {
+  background: linear-gradient(135deg, hsl(var(--oxygenated)), hsl(var(--deoxygenated)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glowing borders */
+.border-glow-red {
+  border: 1px solid hsl(var(--oxygenated) / 0.5);
+  box-shadow: 0 0 15px hsl(var(--oxygenated) / 0.2), inset 0 0 15px hsl(var(--oxygenated) / 0.05);
+}
+
+.border-glow-blue {
+  border: 1px solid hsl(var(--deoxygenated) / 0.5);
+  box-shadow: 0 0 15px hsl(var(--deoxygenated) / 0.2), inset 0 0 15px hsl(var(--deoxygenated) / 0.05);
+}
+
+/* Glass morphism */
+.glass {
+  background: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+/* Section styles */
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Blood vessel SVG paths */
+.blood-path-red {
+  stroke: hsl(var(--oxygenated));
+  filter: drop-shadow(0 0 6px hsl(var(--oxygenated) / 0.8));
+}
+
+.blood-path-blue {
+  stroke: hsl(var(--deoxygenated));
+  filter: drop-shadow(0 0 6px hsl(var(--deoxygenated) / 0.8));
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Tooltip styles */
+.bio-tooltip {
+  position: absolute;
+  z-index: 50;
+  background: hsl(var(--popover));
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  max-width: 220px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  pointer-events: none;
 }
