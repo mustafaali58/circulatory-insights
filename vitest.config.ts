@@ -4,6 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  base: "/circulatory-insights",
   test: {
     environment: "jsdom",
     globals: true,
