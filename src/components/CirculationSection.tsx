@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 
 const smallCirculationSteps = [
   { icon: "🫀", title: "Sağ Karıncık", desc: "Oksijensiz kan kasılmayla sağ karıncıktan atılır.", color: "hsl(220,85%,55%)" },
-  { icon: "🔵", title: "Pulmoner Arterler", desc: "Pulmoner arterler oksijensiz kanı akciğerlere taşır.", color: "hsl(220,80%,60%)" },
+  { icon: "🔵", title: "Akciğer Atardamarı", desc: "Akciğer Atardamarı oksijensiz kanı akciğerlere taşır.", color: "hsl(220,80%,60%)" },
   { icon: "🫁", title: "Akciğer Alveolleri", desc: "Alveollerde gaz değişimi: O₂ alınır, CO₂ verilir.", color: "hsl(280,70%,60%)" },
-  { icon: "🔴", title: "Pulmoner Venler", desc: "4 pulmoner ven oksijenli kanı sol kulakçığa taşır.", color: "hsl(0,75%,55%)" },
+  { icon: "🔴", title: "Akciğer Toplardamarı", desc: "Akciğer Toplardamarı oksijenli kanı sol kulakçığa taşır.", color: "hsl(0,75%,55%)" },
   { icon: "🫀", title: "Sol Kulakçık", desc: "Oksijenli kan sol kulakçıkta toplanır.", color: "hsl(0,75%,52%)" },
 ];
 
@@ -13,8 +13,8 @@ const bigCirculationSteps = [
   { icon: "🫀", title: "Sol Karıncık", desc: "Oksijenli kan büyük kasılmayla sol karıncıktan atılır.", color: "hsl(0,75%,52%)" },
   { icon: "🔴", title: "Aort", desc: "En büyük atar damar olan aort kanı vücuda dağıtır.", color: "hsl(0,75%,55%)" },
   { icon: "🌐", title: "Kapillerler", desc: "Kılcal damarlarda O₂ ve besin hücrelere verilir.", color: "hsl(280,70%,60%)" },
-  { icon: "🔵", title: "Toplardamarlar", desc: "CO₂ ve atıkları taşıyan kan venalara geçer.", color: "hsl(220,80%,60%)" },
-  { icon: "🫀", title: "Vena Kava", desc: "Vena kava superior/inferior oksijensiz kanı sağ kulakçığa getirir.", color: "hsl(220,85%,55%)" },
+  { icon: "🔵", title: "Toplardamarlar", desc: "CO₂ ve atıkları taşıyan kan anatoplardamara geçer.", color: "hsl(220,80%,60%)" },
+  { icon: "🫀", title: "Anatoplardamar", desc: "Anatoplardamar superior/inferior oksijensiz kanı sağ kulakçığa getirir.", color: "hsl(220,85%,55%)" },
 ];
 
 const CirculationSection = () => {
@@ -113,12 +113,12 @@ const CirculationSection = () => {
             {/* Sağ karıncık → Akciğer (mavi, sol) */}
             <path d="M490 200 Q460 150 430 130" stroke="hsl(220,85%,55%)" strokeWidth="4" fill="none"
               markerEnd="url(#arr-blue-c)" strokeDasharray="8 4" />
-            <text x="442" y="155" fill="hsl(220,85%,70%)" fontSize="10" fontFamily="Inter" textAnchor="middle">Pul. Arter</text>
+            <text x="442" y="155" fill="hsl(220,85%,70%)" fontSize="10" fontFamily="Inter" textAnchor="middle">Akciğer Atardamarı</text>
 
             {/* Akciğer → Sol kulakçık (kırmızı, sağ) */}
             <path d="M470 130 Q490 155 415 255" stroke="hsl(0,75%,55%)" strokeWidth="4" fill="none"
               markerEnd="url(#arr-red-c)" strokeDasharray="8 4" />
-            <text x="488" y="170" fill="hsl(0,75%,70%)" fontSize="10" fontFamily="Inter" textAnchor="middle">Pul. Ven</text>
+            <text x="488" y="170" fill="hsl(0,75%,70%)" fontSize="10" fontFamily="Inter" textAnchor="middle">Akciğer Toplardamarı</text>
 
             {/* === BÜYÜK DOLAŞIM YOLLARI === */}
             {/* Sol karıncık → Vücut (kırmızı, sol) */}
@@ -129,7 +129,7 @@ const CirculationSection = () => {
             {/* Vücut → Sağ kulakçık (mavi, sağ) */}
             <path d="M570 430 Q620 350 540 310" stroke="hsl(220,85%,55%)" strokeWidth="4" fill="none"
               markerEnd="url(#arr-blue-c)" strokeDasharray="8 4" />
-            <text x="618" y="370" fill="hsl(220,85%,70%)" fontSize="10" fontFamily="Inter" textAnchor="middle">Vena Kava</text>
+            <text x="618" y="370" fill="hsl(220,85%,70%)" fontSize="10" fontFamily="Inter" textAnchor="middle">Anatoplardamar</text>
 
             {/* Etiketler */}
             <text x="220" y="250" fill="hsl(220,85%,60%)" fontSize="14" fontFamily="Space Grotesk" fontWeight="700" textAnchor="middle">Küçük</text>
@@ -149,7 +149,7 @@ const CirculationSection = () => {
               </div>
               <div>
                 <h3 className="font-display font-bold text-foreground">Küçük Dolaşım</h3>
-                <p className="text-primary text-sm">Pulmoner Dolaşım</p>
+                <p className="text-primary text-sm">Küçük Dolaşım</p>
               </div>
             </div>
 
@@ -176,8 +176,8 @@ const CirculationSection = () => {
 
             <div className="mt-4 p-3 rounded-xl bg-deoxygenated/10 border border-deoxygenated/20">
               <p className="text-xs text-muted-foreground">
-                <span className="text-primary font-semibold">Özet:</span> Sağ karıncık → Pulmoner arterler →
-                Akciğerler (gaz değişimi) → Pulmoner venler → Sol kulakçık
+                <span className="text-primary font-semibold">Özet:</span> Sağ karıncık → Akciğer Atardamarı →
+                Akciğerler (gaz değişimi) → Akciğer Toplardamarı → Sol kulakçık
               </p>
             </div>
           </div>
@@ -218,7 +218,7 @@ const CirculationSection = () => {
             <div className="mt-4 p-3 rounded-xl bg-oxygenated/10 border border-oxygenated/20">
               <p className="text-xs text-muted-foreground">
                 <span className="text-oxygenated font-semibold">Özet:</span> Sol karıncık → Aort →
-                Vücut dokuları (gaz değişimi) → Venalar → Vena kava → Sağ kulakçık
+                Vücut dokuları (gaz değişimi) → Toplardamar → Sağ kulakçık
               </p>
             </div>
           </div>
